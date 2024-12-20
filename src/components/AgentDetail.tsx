@@ -13,22 +13,22 @@ const AgentDetail: React.FC = () => {
     const {uuid} = useParams<{ uuid: string }>()
     const [agent, setAgent] = useState<AgentDetailProps | null>(null)
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch(`https://valorant-api.com/v1/agents/${uuid}`)
-            const data = await response.json()
-            setAgent({
-                id: data.data.uuid,
-                name: data.data.displayName,
-                imageUrl: data.data.displayIcon,
-                description: data.data.description
-            })
-        } catch(error) {
-            console.log(error)
-        }
-    }
-
     useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`https://valorant-api.com/v1/agents/${uuid}`)
+                const data = await response.json()
+                setAgent({
+                    id: data.data.uuid,
+                    name: data.data.displayName,
+                    imageUrl: data.data.displayIcon,
+                    description: data.data.description
+                })
+            } catch(error) {
+                console.log(error)
+            }
+        }
+
         fetchData()
     }, [uuid])
 

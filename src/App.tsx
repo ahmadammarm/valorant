@@ -5,12 +5,14 @@ import AgentDetail from './components/AgentDetail';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<AgentsCard />} />
-        <Route path="/agents/:uuid" element={<AgentDetail />} />
-      </Routes>
-    </Router>
+    <div className="bg-slate-950">
+        <Router>
+        <Routes>
+            <Route path="/" element={<AgentsCard />} />
+            <Route path="/agents/:uuid" element={<AgentDetail />} />
+        </Routes>
+        </Router>
+    </div>
   );
 };
 

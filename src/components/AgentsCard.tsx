@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardTitle } from './ui/card';
-import { useNavigate } from 'react-router-dom';
 import { Button } from './ui/button';
 
 interface AgentProps {
@@ -13,7 +13,6 @@ interface AgentProps {
 const AgentsCard: React.FC = () => {
 
     const [agent, setAgent] = useState<AgentProps[]>([]);
-    const navigate = useNavigate()
 
     const fetchData = async () => {
         try {
