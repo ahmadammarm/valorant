@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardTitle } from './ui/card';
+import { useNavigate } from 'react-router-dom';
+import { Button } from './ui/button';
 
 interface AgentProps {
     id: string,
@@ -11,6 +13,7 @@ interface AgentProps {
 const AgentsCard: React.FC = () => {
 
     const [agent, setAgent] = useState<AgentProps[]>([]);
+    const navigate = useNavigate()
 
     const fetchData = async () => {
         try {
@@ -48,6 +51,11 @@ const AgentsCard: React.FC = () => {
                 <CardDescription>
                     {item.description}
                 </CardDescription>
+                <a href={`/agents/${item.id}`}>
+                    <Button className="mt-5 bg-red-500">
+                        Get Details
+                    </Button>
+                </a>
             </Card>
         ))}
     </div>
