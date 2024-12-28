@@ -38,7 +38,7 @@ const AgentsCard: React.FC = () => {
     }, [])
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-4 mt-16 bg-gradient-to-b from-gray-900 to-gray-800">
         {agent.map((item, index) => (
             <Card key={index} className="px-4 py-4 bg-primary">
                 <CardContent className='flex items-center justify-center rounded-lg border border-red-500 pt-4'>
@@ -50,7 +50,7 @@ const AgentsCard: React.FC = () => {
                 <CardDescription>
                     {item.description}
                 </CardDescription>
-                <a href={`/${item.id}`}>
+                <a href={`/agent/${item.id}`}>
                     <Button className="mt-5 bg-gradient-to-r from-red-500 to-purple-800">
                         Get Details
                     </Button>
