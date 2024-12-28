@@ -50,8 +50,8 @@ const AgentsCard: React.FC = () => {
                 <CardDescription>
                     {item.description}
                 </CardDescription>
-                <a href={`/agents/${item.id}`}>
-                    <Button className="mt-5 bg-red-500">
+                <a href={`/${item.id}`}>
+                    <Button className="mt-5 bg-gradient-to-r from-red-500 to-purple-800">
                         Get Details
                     </Button>
                 </a>
