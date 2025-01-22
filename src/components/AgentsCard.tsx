@@ -52,7 +52,7 @@ const AgentsCard: React.FC = () => {
                 </CardDescription>
                 <a href={`/agent/${item.id}`}>
                     <Button className="mt-5 bg-gradient-to-r from-red-500 to-purple-800">
-                        Get Details More
+                        Get Details
                     </Button>
                 </a>
             </Card>
